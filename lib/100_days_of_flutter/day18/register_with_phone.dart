@@ -66,11 +66,14 @@ class _RegisterPhonePageState extends State<RegisterPhonePage> {
             height: 40,
           ),
           GestureDetector(
+            onTap: () {
+              
+            },
             child: Container(
               height: 50,
               width: 400,
               decoration: BoxDecoration(
-                color: Colors.black,borderRadius: BorderRadius.circular(10)),
+                color: const Color.fromARGB(255, 11, 8, 8),borderRadius: BorderRadius.circular(10)),
               
               child: Center(child: Text("Request OTP",style: subHeading(),)),
             ),
