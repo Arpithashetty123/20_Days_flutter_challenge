@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/100_days_of_flutter/day13/Home_service.dart';
 import 'package:flutter_application_1/100_days_of_flutter/day5/Textproperty.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import '../day19/verification_page.dart';
 class RegisterPhonePage extends StatefulWidget {
   const RegisterPhonePage({super.key});
   @override
@@ -67,7 +68,9 @@ class _RegisterPhonePageState extends State<RegisterPhonePage> {
           ),
           GestureDetector(
             onTap: () {
-              
+               Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return VerificationPage();
+              },));
             },
             child: Container(
               height: 50,
