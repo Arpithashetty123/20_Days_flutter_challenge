@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '100_days_of_flutter/day18/register_with_phone.dart';
-import '100_days_of_flutter/day19/verification_page.dart';
 void main() {
   runApp(const MyApp());
 }
