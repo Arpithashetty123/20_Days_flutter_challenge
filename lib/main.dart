@@ -1,10 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '100_days_of_flutter/day18/register_with_phone.dart';
+import '100_days_of_flutter/day21/LinearChart.dart';
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -19,14 +18,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         hintColor: Colors.deepOrange,
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(
-            color: Colors.black,
-          ),
-          bodyMedium: TextStyle(color: Colors.black),
-          bodySmall: TextStyle(color: Colors.black),
+          // bodyLarge: TextStyle(
+          //   color: Colors.black,
+          // ),
+          // bodyMedium: TextStyle(color: Colors.black),
+          // bodySmall: TextStyle(color: Colors.black),
         ),
       ),
-      home:const RegisterPhonePage()
+      home:const LinearChartPage()
     );
   }
 }
