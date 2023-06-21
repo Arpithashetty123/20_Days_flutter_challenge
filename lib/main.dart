@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '100_days_of_flutter/day21/LinearChart.dart';
+import '100_days_of_flutter/day23/winter_collection.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           // bodySmall: TextStyle(color: Colors.black),
         ),
       ),
-      home:const LinearChartPage()
+      home:const WinterCollectinPage()
     );
   }
 }

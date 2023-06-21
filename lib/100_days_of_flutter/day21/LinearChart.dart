@@ -2,7 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/100_days_of_flutter/day21/title_data.dart';
 import 'package:flutter_application_1/100_days_of_flutter/day5/Textproperty.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 class LinearChartPage extends StatefulWidget {
   const LinearChartPage({super.key});
   @override
@@ -31,6 +31,7 @@ class _LinearChartPageState extends State<LinearChartPage> {
             return [
               SliverToBoxAdapter(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: double.infinity,
@@ -48,29 +49,71 @@ class _LinearChartPageState extends State<LinearChartPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 250,
+                      height: 200,
                       width: double.infinity,
                       child: LineChart(
                         mainData(),
                       ),
-                    )
+                    ),
+                    const SizedBox(height: 60,)
                   ],
                 ),
               )
             ];
           },
-          body: Center(
-            child: Text(
-              "LineChartData",
-              style: subHeading(),
+          body: Wrap(
+          spacing: 100,
+          runSpacing: 150,
+          alignment: WrapAlignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(100, 55),
+                backgroundColor: Colors.green.shade300,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Payment",
+                style: GoogleFonts.podkova(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          )),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(60, 55),
+                backgroundColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  side: BorderSide(
+                   width: 2,
+                    color: Colors.green.shade700,
+                  ),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Transfer",
+                style: GoogleFonts.podkova(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
-
   List<Color> gradientColors = [
-    const Color(0xff23b6e6),
-    const Color(0xff02d39a)
+    const Color.fromARGB(255, 114, 209, 240),
+    const Color.fromARGB(255, 32, 112, 90)
   ];
   //linearchartData: 1.gridData, 2.Title data(top Title,bottom,left ,right), 3.Border Data,4.LinearBar Data,5.Below Bar Data
   LineChartData mainData() {
@@ -99,21 +142,13 @@ class _LinearChartPageState extends State<LinearChartPage> {
       ),
       titlesData: const FlTitlesData(
         show: true,
-      rightTitles: AxisTitles(
-        sideTitles: SideTitles(
-          showTitles: false
-        )
-      ),
-      topTitles: AxisTitles(
-        sideTitles: SideTitles(
-          showTitles: false
-        )
-      ),
+        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
         bottomTitles: AxisTitles(
           sideTitles: SideTitles(
             showTitles: true,
             reservedSize: 30,
-            getTitlesWidget: bottomTitleWidgets,
+            getTitlesWidget:bottomTitleWidgets
           ),
         ),
         leftTitles: AxisTitles(
@@ -131,22 +166,22 @@ class _LinearChartPageState extends State<LinearChartPage> {
       lineBarsData: [
         LineChartBarData(
           spots: const [
-            FlSpot(0,1.2),
+            FlSpot(0, 1.2),
             FlSpot(2.6, 2),
             FlSpot(4.9, 5),
             FlSpot(6.8, 3.1),
             FlSpot(8, 4),
             FlSpot(9.5, 3),
-            FlSpot(11, 4),
+            FlSpot(12, 5),
           ],
           isCurved: true,
           gradient: LinearGradient(
             colors: gradientColors,
           ),
-          barWidth:3,
+          barWidth: 3,
           isStrokeCapRound: true,
           dotData: const FlDotData(
-            show: false,
+            show: true,
           ),
           belowBarData: BarAreaData(
             show: true,

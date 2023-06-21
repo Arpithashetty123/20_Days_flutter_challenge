@@ -6,25 +6,24 @@ import 'package:flutter/material.dart';
       fontSize: 15,
       color: Colors.white
     );
-    Widget text;
+    String text;
     switch (value.toInt()) {
       case 2:
-        text = const Text('MAR', style: style);
+        text ='MAR';
         break;
       case 5:
-        text = const Text('JUN', style: style);
+        text = 'JUN';
         break;
       case 8:
-        text = const Text('SEP', style: style);
+        text = 'SEP';
         break;
       default:
-        text = const Text('', style: style);
+        text = '';
         break;
     }
-
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      child: text,
+      child: Text(text,style: style,)
     );
   }
 
@@ -48,5 +47,8 @@ import 'package:flutter/material.dart';
       default:
         return Container();
     }
-    return Text(text, style: style, textAlign: TextAlign.left);
+    return Padding(
+      padding: const EdgeInsets.only(left: 15),
+      child: Text(text, style: style, ),
+    );
   }
